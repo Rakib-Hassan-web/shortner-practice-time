@@ -8,7 +8,7 @@ const registration = async(req,res)=>{
 
     const {fullName,email,password}=req.body;
 
-    if (!fullName) return res.status(400).send({messege:'FullName is required'})
+    if (!fullName) return res.status(400).send({messege:'FullName is required  '})
     if (!email) return res.status(400).send({messege:'email is required'})
     if (!isvalidEmail(email)) return res.status(400).send({messege:'Please Enter a valid email'})
     if (!password) return res.status(400).send({messege:'password is required'})
