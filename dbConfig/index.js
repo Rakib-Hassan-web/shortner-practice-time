@@ -1,10 +1,12 @@
 
-
-
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.DB_STRING)
-  .then(() => console.log('Connected!'));
+const dbconnect=()=>{
+ return mongoose.connect(process.env.DB_STRING)
+  .then(() => console.log('db Connected!'));
+}
 
 
-  module.exports
+
+
+  module.exports = dbconnect
