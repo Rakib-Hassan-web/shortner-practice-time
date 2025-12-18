@@ -38,7 +38,7 @@ UserSchema.pre('save' ,async function () {
 
 
 UserSchema.methods.ComparePass = async function (candidatePass) {
-    re
+    return await bcrypt.compare( candidatePass ,this.password)
 }
 
 
