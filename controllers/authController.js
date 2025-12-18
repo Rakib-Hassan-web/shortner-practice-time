@@ -1,6 +1,12 @@
 
 const registration =(req,res)=>{
-res.send('rakib ')
+
+
+
+    const {fullName,email,password}=req.body;
+
+    if (!fullName) return res.status(400).send({messege:'FullName is required'})
+    
 }
 
 
