@@ -2,13 +2,13 @@ const userSchema = require("../models/userSchema");
 const { isvalidEmail, isvalidPassword } = require("../utils/validation");
 
 
+
+// ----------registration sec st---------
 const registration = async(req,res)=>{
-
-
 
     const {fullName,email,password}=req.body;
 
-    if (!fullName) return res.status(400).send({messege:'FullName is required  '})
+    if (!fullName) return res.status(400).send({messege:'FullName is required '})
     if (!email) return res.status(400).send({messege:'email is required'})
     if (!isvalidEmail(email)) return res.status(400).send({messege:'Please Enter a valid email'})
     if (!password) return res.status(400).send({messege:'password is required'})
@@ -30,15 +30,17 @@ const registration = async(req,res)=>{
           res.status(201).send({messege:'Registration Successfull'})
 }
 
+// ----------registration sec end---------
 
 
+// ----------login sec st---------
 
 const login = async(req,res)=>{
 
 
     const {email,password}=req.body;
 
-    if (!email) return res.status(400).send({messege:'FullName is required  '})
+    if (!email) return res.status(400).send({messege:'FullName is required '})
     if (!isvalidEmail(email)) return res.status(400).send({messege:'Please Enter a valid email'})
          if (!password) return res.status(400).send({messege:'password is required'})
     if (!isvalidPassword(password)) return res.status(400).send({messege:' Invalid password '})
@@ -51,13 +53,14 @@ const login = async(req,res)=>{
 
 
 
-            res.status(200).send({messege:' Login su '})
+            res.status(200).send({messege:' Login successfull ' ,existingUSer})
 
 
 }
 
 
 
+// ----------login sec end---------
 
 
 
