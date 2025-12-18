@@ -10,4 +10,13 @@ const isvalidEmail =(email)=>{
 }
 
 
-module.exports={isvalidEmail}
+const isvalidPassword =(password)=>{
+   const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+
+    return passwordRegex.test(password)
+
+}
+
+
+module.exports={isvalidEmail,isvalidPassword}
