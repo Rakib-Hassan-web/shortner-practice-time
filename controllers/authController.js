@@ -1,8 +1,22 @@
 
 const registration =(req,res)=>{
-res.send('rakib baba')
+res.send('rakib ')
 }
 
 
 
-module.exports={registration}
+
+const login =(req,res)=>{
+res.send('Any ')
+}
+
+
+
+
+
+
+
+
+
+
+module.exports={registration , login}
