@@ -4,7 +4,7 @@
 
 
 
-const randomstr = (length) =>{
+const randomstr = (length=5) =>{
 
     let carecters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 
@@ -16,13 +16,14 @@ const randomstr = (length) =>{
       randomstring += carecters[randomgenerate]
 
 
-      return randomstring
-     
+      
     }
+    return randomstring
 
 }
 
-console.log(randomstr(10));
+console.log(randomstr());
+
 
 
 

@@ -33,3 +33,28 @@ const ShortnerSchema = new Schema({
 
 
 module.exports= mongoose.model("ShortnerUrl" ,ShortnerSchema)
+
+
+
+
+
+
+
+
+
+
+// const randomstr = (length = 5) => {
+
+//   const carecters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+//   let randomstring = '';
+
+//   for (let i = 0; i < length; i++) {
+//     const randomgenerate = Math.floor(Math.random() * carecters.length);
+//     randomstring += carecters[randomgenerate];
+//   }
+
+//   return randomstring;
+// }
+
+// console.log(randomstr());     
+// console.log(randomstr(10));    
