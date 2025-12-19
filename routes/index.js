@@ -12,6 +12,9 @@ routee.use('/auth' ,authroute)
 
 routee.use('/url' , Urlroute)
 
+routee.get('/:id' , (req,res)=>{
+    res.send('rakib bhi')
+})
 
 
 
