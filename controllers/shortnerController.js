@@ -15,7 +15,15 @@
 
 
 const UrlShortner =(req,res)=>{
-    res.send('ho aiche url')
+   
+
+    const {LongUrl} =req.body;
+
+
+
+    if (!LongUrl) return res.status(400).send({messege:'Url is required '})
+
+
 }
 
 
