@@ -53,9 +53,7 @@ const login = async(req,res)=>{
         
 
 
-            const matching = await existingUSer.ComparePass(password)
-
-            if(!matching) return res.status(400).send({messege:' Invalid password '})
+          
 
 
 
