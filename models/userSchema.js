@@ -38,6 +38,9 @@ UserSchema.pre('save', async function () {
 })
 
 
+UserSchema.methods.ComparePAss = async function (Candidatepass) {
+    return 
+}
 
 
 
