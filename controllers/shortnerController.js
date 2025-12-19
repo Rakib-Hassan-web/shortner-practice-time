@@ -1,34 +1,40 @@
+const shortnerSchema = require("../models/shortnerSchema");
+const GenarateRAndomStr = require("../utils/service");
 const { isvalidUrl } = require("../utils/validation");
 
-// ----------RAndom string genarate function---------
-
-const GenarateRAndomStr = ( length = 5)=>{
-     const carecters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-     let RandomStr ='';
-
-     for( let i = 0;i< length;i++){
-
-        let RandomNumber =Math.floor(Math.random() * carecters.length);
-        RandomStr += carecters[RandomNumber]
-     }
-     return RandomStr
-}
-
-
-console.log(GenarateRAndomStr());
 
 
 
 // ----------UrlShortner-------------
-const UrlShortner =(req,res)=>{
+const UrlShortner = async(req,res)=>{
    
 
-    const {LongUrl} =req.body;
+  try {
+      const {LongUrl} =req.body;
 
 
 
     if (!LongUrl) return res.status(400).send({messege:'Url is required '})
    if (!isvalidUrl(LongUrl)) return res.status(400).send({messege:'Please Enter a valid Url'})
+
+
+    const ShortUrl = GenarateRAndomStr()
+
+    const URLData = new shortnerSchema({
+        LongUrl,
+        ShortUrl
+    })
+
+   await URLData.save()
+
+
+   res.status(200).send(URLData)
+    
+  } catch (error) {
+    
+    
+  }
+
         
 
 
