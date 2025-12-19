@@ -6,16 +6,37 @@
 
 const randomstr = (length) =>{
 
-    const
+    let carecters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+
+    let randomstring = '';
+
+    for( let i = 0; i<length;i++){
+      const randomgenerate = Math.floor(Math.random() * carecters.length);
+
+      randomstring += carecters[randomgenerate]
+
+
+      return randomstring
+     
+    }
 
 }
 
-
-// const UrlShortner =(req,res)=>{
-//     res.send('ho aiche url')
-// }
+console.log(randomstr(10));
 
 
 
 
-// module.exports ={UrlShortner}
+
+
+
+
+
+const UrlShortner =(req,res)=>{
+    res.send('ho aiche url')
+}
+
+
+
+
+module.exports ={UrlShortner}
