@@ -28,7 +28,10 @@ const UrlShortner = async(req,res)=>{
    await URLData.save()
 
 
-   res.status(200).send(URLData)
+   res.status(200).send({
+    LongUrl : URLData.LongUrl,
+    ShortUrl :URLData.ShortUrl
+   })
     
   } catch (error) {
     
