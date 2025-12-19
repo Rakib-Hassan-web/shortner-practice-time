@@ -6,7 +6,8 @@ const { isvalidEmail, isvalidPassword } = require("../utils/validation");
 // ----------registration sec st---------
 const registration = async(req,res)=>{
 
-    const {fullName,email,password}=req.body;
+   try {
+     const {fullName,email,password}=req.body;
 
     if (!fullName) return res.status(400).send({messege:'FullName is required '})
     if (!email) return res.status(400).send({messege:'email is required'})
@@ -28,6 +29,12 @@ const registration = async(req,res)=>{
 
 
           res.status(201).send({messege:'Registration Successfull'})
+    
+   } catch (error) {
+        res.status(500).send({messege:'Internal Server Error'})
+
+    
+   }
 }
 
 // ----------registration sec end---------
@@ -38,7 +45,8 @@ const registration = async(req,res)=>{
 const login = async(req,res)=>{
 
 
-    const {email,password}=req.body;
+    try {
+        const {email,password}=req.body;
 
     if (!email) return res.status(400).send({messege:'FullName is required '})
     if (!isvalidEmail(email)) return res.status(400).send({messege:'Please Enter a valid email'})
@@ -60,6 +68,13 @@ const login = async(req,res)=>{
 
 
             res.status(200).send({messege:' Login successfull ' ,existingUSer})
+        
+    } catch (error) {
+
+            res.status(500).send({messege:'Internal Server Error'})
+
+        
+    }
 
 
 }

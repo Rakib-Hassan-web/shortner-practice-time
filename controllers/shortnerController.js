@@ -32,6 +32,8 @@ const UrlShortner = async(req,res)=>{
     
   } catch (error) {
     
+
+    res.status(500).send({messege:'Internal Server Error'})
     
   }
 
