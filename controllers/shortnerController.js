@@ -49,5 +49,15 @@ const UrlShortner = async(req,res)=>{
 
 // -----------------Redirect url -------
 
+const RedirectUrl = async (req,res)=>{
+    const params =req.params
 
-module.exports ={UrlShortner}
+    if(!params.id) return  ;
+
+       const UrlData =  await shortnerSchema.findOne({ShortUrl :params.id})
+
+       res.redirect(UrlData.LongUrl)
+}
+
+
+module.exports ={UrlShortner ,RedirectUrl}
