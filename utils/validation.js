@@ -19,4 +19,13 @@ const isvalidPassword =(password)=>{
 }
 
 
-module.exports={isvalidEmail,isvalidPassword}
+const isvalidUrl =(LongUrl)=>{
+   const LongUrlRegex = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})(\/\S*)?$/;
+
+
+    return LongUrlRegex.test(LongUrl)
+
+}
+
+
+module.exports={isvalidEmail,isvalidPassword,isvalidUrl}
