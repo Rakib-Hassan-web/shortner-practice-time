@@ -26,10 +26,10 @@ const ShortnerSchema = new Schema({
                 type:Date,
                 default:Date.now()
             }
-        }
+        },
     ]
 },{timestamps:true});
 
 
 
-module.exports=
+module.exports= mongoose.model("ShortnerUrl" ,ShortnerSchema)

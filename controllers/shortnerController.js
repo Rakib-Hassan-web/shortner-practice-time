@@ -1,11 +1,21 @@
 
 
 
-const UrlShortner =(req,res)=>{
-    res.send('ho aiche url')
+
+
+
+const randomstr = (length) =>{
+
+    const
+
 }
 
 
+// const UrlShortner =(req,res)=>{
+//     res.send('ho aiche url')
+// }
 
 
-module.exports ={UrlShortner}
+
+
+// module.exports ={UrlShortner}
