@@ -60,7 +60,6 @@ const login = async(req,res)=>{
 
 
             res.status(200).send({messege:' Login successfull ' ,existingUSer})
-            res.status(200).send({messege:' Login successfull ' ,existingUSer})
 
 
 }
