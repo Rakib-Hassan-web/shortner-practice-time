@@ -51,9 +51,13 @@ const login = async(req,res)=>{
         if(!existingUSer) return res.status(400).send({messege:'No User Found In this Email'})
 
         
+             const matching = await existingUSer.ComparePAss(password)
 
+             if(!matching) return res.status(400).send({messege:' Enter Correct  password  '})
 
-          
+            // const matching = await existingUSer.ComparePass(password)
+
+            // if(!matching) return res.status(400).send({messege:' Invalid password '})
 
 
 
