@@ -26,6 +26,8 @@ const UserSchema = new Schema({
 },{timestamps:true});
 
 
+// ============= hash  pass----------=========
+
 
 UserSchema.pre('save', async function () {
 
@@ -37,24 +39,13 @@ UserSchema.pre('save', async function () {
     this.password= await bcrypt.hash(this.password ,salt)
 })
 
+// =============  compare pass----------=========
 
 UserSchema.methods.ComparePAss = async function (Candidatepass) {
     return  await bcrypt.compare(Candidatepass,this.password )
 }
 
 
-
-
-
-
-
-
-
-
-
-// UserSchema.methods.ComparePass = async function (candidatePass) {
-//     return await bcrypt.compare( candidatePass ,this.password)
-// }
 
 
 
