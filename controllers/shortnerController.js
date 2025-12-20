@@ -62,14 +62,4 @@ const RedirectUrl = async (req,res)=>{
 
 
 
-const redi = async(req,res)=>{
-  const params =req.params
-
-  if(!params.id) return;
-
-  const redidata = await shortnerSchema.findOne({ShortUrl:params.id})
-
-  res.redirect(redidata.LongUrl)
-}
-
 module.exports ={UrlShortner ,RedirectUrl}
