@@ -1,5 +1,6 @@
 const userSchema = require("../models/userSchema");
 const { isvalidEmail, isvalidPassword } = require("../utils/validation");
+const jwt = require('jsonwebtoken');
 
 
 
@@ -64,10 +65,12 @@ const login = async(req,res)=>{
              if(!matching) return res.status(400).send({messege:' Enter Correct  password  '})
 
        
+var token = jwt.sign({ id: existingUSer._id, email:existingUSer.email
+ }, process.env.JWT_SEC);
 
 
 
-            res.status(200).send({messege:' Login successfull ' ,existingUSer})
+            res.status(200).send({messege:' Login successfull ' ,token})
         
     } catch (error) {
 
