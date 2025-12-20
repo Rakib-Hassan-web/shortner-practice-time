@@ -1,7 +1,8 @@
 const userSchema = require("../models/userSchema");
+const GenarateAccTkn = require("../utils/token");
 const { isvalidEmail, isvalidPassword } = require("../utils/validation");
 const jwt = require('jsonwebtoken');
-
+  
 
 
 // ----------registration sec st---------
@@ -65,12 +66,13 @@ const login = async(req,res)=>{
              if(!matching) return res.status(400).send({messege:' Enter Correct  password  '})
 
        
-var token = jwt.sign({ id: existingUSer._id, email:existingUSer.email
- }, process.env.JWT_SEC);
+
+         const token =GenarateAccTkn({id:existingUSer._id ,email :existingUSer.email})
+
+         res.cookie('accesToken' ,token)
 
 
-
-            res.status(200).send({messege:' Login successfull ' ,token})
+            res.status(200).send({messege:' Login successfull ' ,})
         
     } catch (error) {
 
