@@ -49,6 +49,8 @@ const login = async(req,res)=>{
 
     try {
         const {email,password}=req.body;
+        console.log("user" ,req.user);
+        
 
     if (!email) return res.status(400).send({messege:'FullName is required '})
     if (!isvalidEmail(email)) return res.status(400).send({messege:'Please Enter a valid email'})

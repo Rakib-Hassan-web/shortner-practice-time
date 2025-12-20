@@ -12,6 +12,8 @@ const UrlShortner = async(req,res)=>{
   try {
       const {LongUrl} =req.body;
 
+        console.log("user" ,req.user);
+
 
 
     if (!LongUrl) return res.status(400).send({messege:'Url is required '})

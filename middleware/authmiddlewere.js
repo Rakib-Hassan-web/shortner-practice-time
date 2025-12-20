@@ -7,13 +7,15 @@ const authMiddlewere =(req,res,next)=>{
     const token =req.cookies.accesToken
     const decoded =VerifyToken(token)
 
+    req.user =decoded
+
     next()
     
  } catch (error) {
     next()
     console.log(error);
     
-    
+
     
  }
     
