@@ -1,5 +1,5 @@
 const userSchema = require("../models/userSchema");
-const GenarateAccTkn = require("../utils/token");
+const { GenarateAccTkn }= require("../utils/token");
 const { isvalidEmail, isvalidPassword } = require("../utils/validation");
 const jwt = require('jsonwebtoken');
   
@@ -67,14 +67,17 @@ const login = async(req,res)=>{
 
        
 
-         const token =GenarateAccTkn({id:existingUSer._id ,email :existingUSer.email})
+         const token = GenarateAccTkn ({id:existingUSer._id ,email :existingUSer.email})
 
-         res.cookie('accesToken' ,token)
+             res.cookie('accesToken' ,token)
+             console.log(token);
+             
 
 
-            res.status(200).send({messege:' Login successfull ' ,})
+            res.status(200).send({messege:' Login successfull ' })
         
     } catch (error) {
+        console.log(error)
 
             res.status(500).send({messege:'Internal Server Error'})
 

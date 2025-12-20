@@ -13,4 +13,12 @@ return token;
 }
 
 
-module.exports = GenarateAccTkn
+const VerifyToken =(token)=>{
+
+    const decoded = jwt.verify(token,process.env.JWT_SEC );
+
+    return decoded
+}
+
+
+module.exports = {GenarateAccTkn ,VerifyToken}
