@@ -14,6 +14,7 @@ const authMiddlewere =(req,res,next)=>{
     console.log(error);
     
     
+    
  }
     
 }
