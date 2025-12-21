@@ -8,6 +8,10 @@ const authMiddlewere =(req,res,next)=>{
     const decoded =VerifyToken(token)
 
 
+   
+   console.log(  decoded)
+   req.user =decoded
+    next();
  } catch (error) {
     next()
     console.log(error);
