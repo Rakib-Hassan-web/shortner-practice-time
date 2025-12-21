@@ -9,7 +9,7 @@ const routee =express.Router()
 
 routee.post('/create' ,isAuthintic,UrlShortner)
 
-routee.post('/getall' ,authMiddlewere,GetAllHistory)
+routee.get('/getall' ,authMiddlewere,GetAllHistory)
 
 
 

@@ -89,13 +89,22 @@ const login = async(req,res)=>{
 
 }
 
-
-
 // ----------login sec end---------
 
 
+// ----------getprofile sec st---------
+
+const getprofile = async(req,res)=>{
+
+    try {
+        
+    } catch (error) {
+        
+    }
+}
 
 
+// ----------getprofile sec end---------
 
 
 

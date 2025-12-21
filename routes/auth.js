@@ -10,5 +10,7 @@ routee.post("/registration" ,registration)
 
 routee.post("/login" ,login)
 
+routee.get("/login" ,login)
+
 
 module.exports= routee
