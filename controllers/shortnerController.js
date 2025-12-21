@@ -62,7 +62,7 @@ const RedirectUrl = async (req,res)=>{
        if(UrlData.user){
          
         UrlData.VisitHistory.push({ VisitTime:Date.now()})
-        
+        await UrlData.save()
        }
 
        res.redirect(UrlData.LongUrl)
