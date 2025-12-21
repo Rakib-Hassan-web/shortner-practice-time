@@ -97,8 +97,16 @@ const login = async(req,res)=>{
 const getprofile = async(req,res)=>{
 
     try {
-        
+        const user =req.user
+
+        const userData = await userSchema.findById(user.id)
+
+        if(!userData) return res.status(400).send({messege:'No User Found'})
+
+        res.status(200).send({userData})
     } catch (error) {
+            res.status(500).send({messege:'Internal Server Error'})
+
         
     }
 }
