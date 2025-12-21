@@ -12,7 +12,7 @@ const UrlShortner = async(req,res)=>{
   try {
       const {LongUrl} =req.body;
 
-        console.log("user" ,req.user);
+       
 
 
 
@@ -24,7 +24,8 @@ const UrlShortner = async(req,res)=>{
 
     const URLData = new shortnerSchema({
         LongUrl,
-        ShortUrl
+        ShortUrl,
+        user: req.user?.id
     })
 
    await URLData.save()
@@ -37,12 +38,15 @@ const UrlShortner = async(req,res)=>{
     
   } catch (error) {
     
+    
+    
 
     res.status(500).send({messege:'Internal Server Error'})
     
   }
 
         
+
 
 
 }

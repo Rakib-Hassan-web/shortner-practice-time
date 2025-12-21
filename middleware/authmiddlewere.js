@@ -4,17 +4,13 @@ const { VerifyToken } = require("../utils/token")
 
 const authMiddlewere =(req,res,next)=>{
  try {
-    const token =req.cookies.accesToken
+    const token =req.headers.acc_token
     const decoded =VerifyToken(token)
 
-    req.user =decoded
 
-    next()
-    
  } catch (error) {
     next()
     console.log(error);
-    
 
     
  }
@@ -22,3 +18,8 @@ const authMiddlewere =(req,res,next)=>{
 }
 
 module.exports = authMiddlewere
+
+
+
+
+

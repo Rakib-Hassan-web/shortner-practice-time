@@ -71,7 +71,7 @@ const login = async(req,res)=>{
 
          const token = GenarateAccTkn ({id:existingUSer._id ,email :existingUSer.email})
 
-             res.cookie('accesToken' ,token)
+             res.cookie('acc_token' ,token)
              console.log(token);
              
 
