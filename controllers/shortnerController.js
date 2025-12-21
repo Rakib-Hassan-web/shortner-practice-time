@@ -13,9 +13,6 @@ const UrlShortner = async(req,res)=>{
       const {LongUrl} =req.body;
 
        
-
-
-
     if (!LongUrl) return res.status(400).send({messege:'Url is required '})
    if (!isvalidUrl(LongUrl)) return res.status(400).send({messege:'Please Enter a valid Url'})
 
@@ -61,6 +58,12 @@ const RedirectUrl = async (req,res)=>{
     if(!params.id) return  ;
 
        const UrlData =  await shortnerSchema.findOne({ShortUrl :params.id})
+
+       if(UrlData.user){
+         
+        UrlData.VisitHistory.push({ VisitTime:Date.now()})
+        
+       }
 
        res.redirect(UrlData.LongUrl)
 }
