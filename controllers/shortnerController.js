@@ -69,6 +69,16 @@ const RedirectUrl = async (req,res)=>{
 }
 
 
+// -----------gett all history------------
 
 
-module.exports ={UrlShortner ,RedirectUrl}
+const GetAllHistory = async( req,res)=>{
+  try {
+    const user =req.user;
+
+    const u
+  } catch (error) {
+    
+  }
+}
+module.exports ={UrlShortner ,RedirectUrl, GetAllHistory}

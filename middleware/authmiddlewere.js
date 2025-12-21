@@ -6,7 +6,7 @@ const { VerifyToken } = require("../utils/token")
 
 
 
-const authMiddlewere =(req,res,next)=>{
+const isAuthintic =(req,res,next)=>{
  try {
     const token =req.headers.acc_token
     const decoded =VerifyToken(token)
@@ -25,7 +25,28 @@ const authMiddlewere =(req,res,next)=>{
     
 }
 
-module.exports = authMiddlewere
+
+const authMiddlewere =(req,res,next)=>{
+ try {
+    const token =req.headers.acc_token
+    const decoded =VerifyToken(token)
+
+    if(!decoded) return res.status(401).send({message :"unauthorized access"})
+
+   req.user =decoded
+    next();
+ } catch (error) {
+
+  res.status(500).send({message :"unauthorized request"})
+
+
+    
+ }
+    
+}
+
+
+module.exports ={isAuthintic, authMiddlewere}
 
 
 

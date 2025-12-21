@@ -1,13 +1,15 @@
 
 
 const express = require('express')
-const { UrlShortner } = require('../controllers/shortnerController')
-const authMiddlewere = require('../middleware/authmiddlewere')
+const { UrlShortner, GetAllHistory } = require('../controllers/shortnerController')
+const { authMiddlewere, isAuthintic } = require('../middleware/authmiddlewere')
 
 
 const routee =express.Router()
 
-routee.post('/create' ,authMiddlewere,UrlShortner)
+routee.post('/create' ,isAuthintic,UrlShortner)
+
+routee.post('/getall' ,authMiddlewere,GetAllHistory)
 
 
 
