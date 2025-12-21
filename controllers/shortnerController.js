@@ -76,7 +76,8 @@ const GetAllHistory = async( req,res)=>{
   try {
     const user =req.user;
 
-    const u
+    const urls =await shortnerSchema.find({user :user.id}).select('-user')
+    res.status(200).send({urls} )
   } catch (error) {
     
   }
